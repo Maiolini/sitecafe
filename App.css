@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Cores da marca do café */
+  --coffee-cream: #f2e3ca;
+  --coffee-dark: #3e2a1b;
+  --coffee-light: #ccb38c;
+  --coffee-medium: #785841;
+  --coffee-brown: #a38661;
+  --coffee-red-dark: #651b11;
+  --coffee-red: #871918;
+  
+  /* Aplicando as cores da marca ao tema */
+  --background: #f2e3ca;
+  --foreground: #3e2a1b;
+  --card: #ffffff;
+  --card-foreground: #3e2a1b;
+  --popover: #ffffff;
+  --popover-foreground: #3e2a1b;
+  --primary: #651b11;
+  --primary-foreground: #f2e3ca;
+  --secondary: #ccb38c;
+  --secondary-foreground: #3e2a1b;
+  --muted: #ccb38c;
+  --muted-foreground: #785841;
+  --accent: #a38661;
+  --accent-foreground: #f2e3ca;
+  --destructive: #871918;
+  --border: #a38661;
+  --input: #ffffff;
+  --ring: #785841;
+  --chart-1: #651b11;
+  --chart-2: #871918;
+  --chart-3: #a38661;
+  --chart-4: #785841;
+  --chart-5: #ccb38c;
+}
+
+.dark {
+  --background: #3e2a1b;
+  --foreground: #f2e3ca;
+  --card: #785841;
+  --card-foreground: #f2e3ca;
+  --popover: #785841;
+  --popover-foreground: #f2e3ca;
+  --primary: #ccb38c;
+  --primary-foreground: #3e2a1b;
+  --secondary: #a38661;
+  --secondary-foreground: #f2e3ca;
+  --muted: #a38661;
+  --muted-foreground: #ccb38c;
+  --accent: #651b11;
+  --accent-foreground: #f2e3ca;
+  --destructive: #871918;
+  --border: #a38661;
+  --input: #785841;
+  --ring: #ccb38c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+/* Estilos customizados para a página de fornecedores */
+.coffee-gradient {
+  background: linear-gradient(135deg, #f2e3ca 0%, #ccb38c 100%);
+}
+
+.coffee-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(165, 134, 97, 0.3);
+  transition: all 0.3s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(101, 27, 17, 0.15);
+  border-color: #651b11;
+}
+
+.benefit-tag {
+  background: linear-gradient(45deg, #651b11, #871918);
+  color: #f2e3ca;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.contact-button {
+  background: linear-gradient(45deg, #a38661, #785841);
+  color: #f2e3ca;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: linear-gradient(45deg, #785841, #651b11);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .coffee-card {
+    margin-bottom: 1rem;
+  }
+}
+
